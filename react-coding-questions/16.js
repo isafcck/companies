@@ -1,5 +1,5 @@
 
-
+a
 //Implement useUpdateEffect() that it works the same as useEffect() except that it skips running the callback on first render.
 
 
@@ -8,10 +8,10 @@ import React,{EffectCallBack,DependencyList} from 'react';
 
 
 
-export default  useUpdateEffect(effect : EffectCallBack,deps?: DependencyList){
+export  function useUpdateEffect(effect : EffectCallBack,deps?: DependencyList){
     const ref = React.useRef(false);
     React.useEffect(()=>{
         if(ref.current)   return effect();
-        ref.current-=true;  
+        ref.current=true;  
     },deps)
 }
